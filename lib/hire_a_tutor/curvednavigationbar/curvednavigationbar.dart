@@ -9,7 +9,7 @@ import '../../routes/routesname.dart';
 import 'itemesguardian/confarmation.dart';
 import 'itemesguardian/homepage.dart';
 import 'itemesguardian/jobpost.dart';
-import 'itemesguardian/profile/jobstatus/jobstatus.dart';
+
 
 
 class Curvednavigationbar extends StatefulWidget {
@@ -21,7 +21,7 @@ class Curvednavigationbar extends StatefulWidget {
 
 class _CurvednavigationbarState extends State<Curvednavigationbar> {
   var page = 0;
-  final _pages = [Homepage(), Jobpost(), Jobstatus(), Confarmation()];
+  final _pages = [Homepage(), Jobpost(), Confarmation()];
 
    late Future<profileModel> _profileData;
 

@@ -69,11 +69,14 @@ class _TutiontypeState extends State<Tutiontype> {
         return DropdownMenuItem<String>(
           value: tuitionType['id'].toString(), // Assign ID, not name
           child: Text(tuitionType['name']),
+
+
         );
       }).toList(),
       onChanged: (newValue) {
         setState(() {
           widget.onChanged?.call(newValue);
+          print("select tution types: "+newValue!);
         });
       },
     );

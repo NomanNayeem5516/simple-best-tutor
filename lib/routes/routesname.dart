@@ -32,6 +32,7 @@ class RouteName{
   static const String quiz='/quiz';
   static const String viweprofile='/viweprofile';
   static const String viwe_downloadcv='/viwe_downloadcv';
+  static const String alljobdtails='/alljobdtails';
 
 
 

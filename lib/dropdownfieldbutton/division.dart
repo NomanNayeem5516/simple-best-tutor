@@ -14,17 +14,47 @@ class Division extends StatefulWidget {
 
 class _DivisionState extends State<Division> {
   List<dynamic> division = [];
+  var countryid;
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+
+   // Future.delayed(const Duration(seconds:5),(){fetchData(countryid:id);});
+    fetchcountryData();
   }
 
-  Future<void> fetchData() async {
+
+  Future<void> fetchcountryData() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('access_token');
-    final response = await http.get(Uri.parse('https://api.softpark.xyz/api/division?countryId=1'),
+    final response = await http.get(
+      Uri.parse('https://api.softpark.xyz/api/country'),
+      headers: {
+        'Authorization': 'Bearer $token',
+      },
+    );
+
+    if (response.statusCode == 200) {
+      setState(() {
+        //print("this is country-$response");
+
+        var countries = json.decode(response.body);
+
+        countryid=countries[0]["id"];
+        fetchData(countryid:countryid);
+       // print('this is countryid$countryid');
+        //print("this is country-$countries");
+      });
+    } else {
+      throw Exception('Failed to load data');
+    }
+  }
+
+  Future<void> fetchData({countryid}) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    String? token = prefs.getString('access_token');
+    final response = await http.get(Uri.parse('https://api.softpark.xyz/api/division?countryId=$countryid'),
       headers: {
         'Authorization': 'Bearer $token',
       },

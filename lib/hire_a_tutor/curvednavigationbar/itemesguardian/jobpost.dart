@@ -254,7 +254,9 @@ class _JobpostState extends State<Jobpost> {
                 SizedBox(height: 10),
                 CountryDropdown(
                   selectedCountry: selectedCountry,
+
                   onChanged: (newValue) {
+
                     setState(() {
                       selectedCountry = newValue; // Update selected country
                     });

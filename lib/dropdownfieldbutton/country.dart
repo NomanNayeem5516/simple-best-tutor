@@ -34,9 +34,13 @@ class _CountryDropdownState extends State<CountryDropdown> {
         'Authorization': 'Bearer $token',
       },
     );
+
     if (response.statusCode == 200) {
       setState(() {
+        print("this is country-$response");
+
         countries = json.decode(response.body);
+        print("this is country-$countries");
       });
     } else {
       throw Exception('Failed to load data');

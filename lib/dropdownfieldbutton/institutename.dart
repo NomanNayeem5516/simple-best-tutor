@@ -72,8 +72,11 @@ class _MultiSelectDropdownExampleState
           chipDisplay: MultiSelectChipDisplay(
             onTap: (value) {
               setState(() {
+                print(value);
+                print("institute types: ");
                 widget.selectedInstitutes.remove(value);
-                widget.onSelectionChanged(widget.selectedInstitutes); // Call callback function
+                widget.onSelectionChanged(widget.selectedInstitutes);
+                // Call callback function
               });
             },
           ),

@@ -3,9 +3,6 @@ import 'package:finalbesttutor/become_a_tutor/iteamstutor/profile2/tutorjobs/all
 import 'package:finalbesttutor/become_a_tutor/iteamstutor/profile2/tutorjobs/filter/filter.dart';
 import 'package:finalbesttutor/become_a_tutor/iteamstutor/profile2/tutorjobs/myoffer/MyOffer.dart';
 import 'package:finalbesttutor/become_a_tutor/iteamstutor/profile2/tutorjobs/nearbyjobs/nearbyjobs.dart';
-import 'package:finalbesttutor/hire_a_tutor/curvednavigationbar/itemesguardian/profile/jobstatus/jobstatusitems/apointedjob/appointedjob.dart';
-import 'package:finalbesttutor/hire_a_tutor/curvednavigationbar/itemesguardian/profile/jobstatus/jobstatusitems/canceledjob/canceljob.dart';
-import 'package:finalbesttutor/hire_a_tutor/curvednavigationbar/itemesguardian/profile/jobstatus/jobstatusitems/livejob/livejob.dart';
 import 'package:flutter/material.dart';
 
 
@@ -20,15 +17,15 @@ class Joblist extends StatefulWidget {
 class _JoblistState extends State<Joblist> with SingleTickerProviderStateMixin{
   TabController? controller;
   final screentitle =[
-    'Pending Job',
-    'Live Job',
-    'Appointed Job',
-    'Confirmed Job',
-    'Canceled Job',
+    'All Job',
+    'Nearby Job',
+    'My Job',
+    'Filter Job',
+
   ];
   @override
   void initState() {
-    controller=TabController(length:5, vsync: this);
+    controller=TabController(length:4, vsync: this);
     controller!.addListener(() {
       setState(() {
 

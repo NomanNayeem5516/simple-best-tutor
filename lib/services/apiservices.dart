@@ -108,7 +108,7 @@ class Apiservices {
   }
 
 
-  Future<dynamic> gettutorjobdetails() async {
+  Future<dynamic> gettutorjob() async {
     try {
       final SharedPreferences prefs = await SharedPreferences.getInstance();
       String? token = prefs.getString('access_token');
@@ -129,6 +129,10 @@ class Apiservices {
     }
     return null;
   }
+
+
+
+
 
 }
 

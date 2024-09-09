@@ -91,6 +91,7 @@ class _LoginPage2State extends State<LoginPage2> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Login Page'),
+        centerTitle: true,
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
